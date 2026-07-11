@@ -11,9 +11,9 @@ class Character:
         self.xp = xp
         self.next_level_xp = next_level_xp
         self.gold = gold
-        self.inventory = inventory
+        self.inventory = inventory if inventory is not None else []
         self.armor_set = armor_set
-        self.spell = spell
+        self.spell = spell if spell is not None else []
 
     def attack(self, target, attack_power):
         pass

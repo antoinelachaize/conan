@@ -1,3 +1,6 @@
+import random
+
+#CHARACTER CLASS INITIALISATION
 class Character:
     def __init__(self, name, hp, hp_max, mana, mana_max, attack_power, defense,level=1, xp=0, next_level_xp=100, gold=0, inventory=None, armor_set="leather", spell=None):
         self.name = name
@@ -15,26 +18,39 @@ class Character:
         self.armor_set = armor_set
         self.spell = spell if spell is not None else []
 
-    def attack(self, target, attack_power):
+#ATTACK FUNCTION
+    def attack(self, target):
+        damage = random.randint(self.attack_power - 5, self.attack_power + 5)
+        target.hp = target.hp - damage
+        print (f"{self.name} attacks {target.name} for {damage} damage!")
+
+
+#CAST SPELL FUNCTION
+    def cast_spell(self, target):
         pass
 
-    def cast_spell(self, spell, target):
+#USE ITEM FUNCTION
+    def use_item(self):
         pass
 
-    def use_item(self, spell):
+#EQUIP ARMOR FUNCTION
+    def equip_armor_set(self):
         pass
 
-    def equip_armor_set(self, armor_set, defence):
+#GAIN XP FUNCTION
+    def gain_xp(self):
         pass
 
-    def gain_xp(self, xp):
+#LEVEL UP FUNCTION
+    def level_up(self):
         pass
 
-    def level_up(self, level):
-        pass
-
+#CHECK IF CHARACTER IS ALIVE FUNCTION
     def is_alive(self):
-        pass
+        return self.hp > 0
 
+#SHOW AND PRINT STATS OF CHARACTER (TRY TO FIND A WAY TO ALIGN THE TEXT)
     def show_stats(self):
-        pass
+        print (f"II {self.name} II ")
+        print (f"HP : {self.hp} / {self.hp_max} I MANA : {self.mana} / {self.mana_max}")
+        print (f"Attack : {self.attack_power} I Defense : {self.defense} I Level : {self.level}")

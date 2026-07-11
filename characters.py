@@ -2,13 +2,14 @@ import random
 
 #CHARACTER CLASS INITIALISATION
 class Character:
-    def __init__(self, name, hp, hp_max, mana, mana_max, attack_power, defense,level=1, xp=0, next_level_xp=100, gold=0, inventory=None, armor_set="leather", spell=None):
+    def __init__(self, name, hp, hp_max, mana, mana_max, attack_power, spell_power, defense,level=1, xp=0, next_level_xp=100, gold=0, inventory=None, armor_set="leather", spell=None):
         self.name = name
         self.hp = hp
         self.hp_max = hp_max
         self.mana = mana
         self.mana_max = mana_max
         self.attack_power = attack_power
+        self.spell_power = spell_power
         self.defense = defense
         self.level = level
         self.xp = xp
@@ -23,11 +24,6 @@ class Character:
         damage = random.randint(self.attack_power - 5, self.attack_power + 5)
         target.hp = target.hp - damage
         print (f"{self.name} attacks {target.name} for {damage} damage!")
-
-
-#CAST SPELL FUNCTION
-    def cast_spell(self, target):
-        pass
 
 #USE ITEM FUNCTION
     def use_item(self):
@@ -53,4 +49,4 @@ class Character:
     def show_stats(self):
         print (f"II {self.name} II ")
         print (f"HP : {self.hp} / {self.hp_max} I MANA : {self.mana} / {self.mana_max}")
-        print (f"Attack : {self.attack_power} I Defense : {self.defense} I Level : {self.level}")
+        print (f"Attack : {self.attack_power} I Spell Power : {self.spell_power} I Defense : {self.defense} I Level : {self.level}")

@@ -1,7 +1,7 @@
 from characters import Character
 from enemies import Enemy
 
-
+#MAIN FIGHT FUNCTION LOOP
 def fight(hero, enemy):
     while hero.is_alive() and enemy.is_alive():
         hero.attack(enemy)

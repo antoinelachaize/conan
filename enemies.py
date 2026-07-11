@@ -14,7 +14,7 @@ class Enemy:
 #ATTACK FUNCTION
     def attack(self, target):
         damage = random.randint(self.attack_power - 5, self.attack_power + 5)
-        target.hp = target.hp - damage
+        target.hp -= damage
         print (f"{self.name} attacks {target.name} for {damage} damage!")
 
 #CHECK IF CHARACTER IS ALIVE FUNCTION

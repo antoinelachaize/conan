@@ -26,10 +26,13 @@ class Character:
         print (f"{self.name} attacks {target.name} for {damage} damage!")
 
 #USE ITEM FUNCTION
-    def use_item(self):
-        pass
+    def use_item(self, item):
+        self.hp = self.hp + item.value
+        if self.hp > self.hp_max:
+            self.hp = self.hp_max
+        print (f"You drink {item.name} and you heal for {item.value} HP !")
 
-#EQUIP ARMOR FUNCTION
+#EQUIP ARMOR FUNCTION 
     def equip_armor_set(self):
         pass
 
